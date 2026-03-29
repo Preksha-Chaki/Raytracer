@@ -2,7 +2,7 @@
 
 In this Github repository, I will be documenting my journey making my own raytracer following [_Ray Tracing in One Weekend_] along whith what challenges i faced and how i solved them.
 
-## 0.Creating a cpp file in directory and running it
+## 0. Creating a cpp file in directory and running it
 
 First we create a main.cpp file.
 
@@ -32,7 +32,7 @@ to run the build,
 ```
 > redirects the output and saves the output in the form of file image.ppm
 
-## 1.Output an Image
+## 1. Output an Image
 
 The program generates an image in the `.ppm` format by writing pixel data to standard output.
 
@@ -44,12 +44,12 @@ We now get to view our first image,
 
 <img width="515" height="343" alt="image" src="https://github.com/user-attachments/assets/b3d1dfb9-96c8-4e66-bc63-e6c18003932e" />
 
-## 2.vec3 Class
+## 2. vec3 Class
 
 The term vec3 in C++ typically refers to a user-defined class or struct for representing a three-component vector, commonly used in graphics programming and physics simulations to store positions, directions, velocities, or colors.
 
 Next we will be creating a vec3.h header file
-Refference used here:
+References used here:
 - https://www.reddit.com/r/cpp_questions/comments/j7wfef/what_is_the_need_for_ifndef_define_endif_inside/
 - https://youtu.be/tOQZlD-0Scc?si=Vi7uAjPyavt1-1Lc
 
