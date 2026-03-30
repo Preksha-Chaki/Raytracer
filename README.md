@@ -30,7 +30,7 @@ to run the build,
 ```
 ./build/main > image.ppm
 ```
->redirects the output and saves the output in the form of file image.ppm
+> redirects the output and saves the output in the form of file image.ppm
 
 ## 1. Output an Image
 
@@ -55,21 +55,25 @@ References used here:
 - https://youtu.be/tOQZlD-0Scc?si=Vi7uAjPyavt1-1Lc
 - https://www.geeksforgeeks.org/cpp/pointers-and-references-in-c/
 
-  ### cross product
-  if,u = (ux, uy, uz)
+### cross product
+
+if,u = (ux, uy, uz)
     v = (vx, vy, vz)
 
-  then,
+then,
   u × v =
   ( uy*vz - uz*vy,
   uz*vx - ux*vz,
   ux*vy - uy*vx )
 
-  ### Color Utility Functions
+### Color Utility Functions
   
-  In the file color.h we make another alias for vec3 color.
-  pix_color is the object of color. Then we extract components r,g and b. These are in the range[0.0,1.0] but we need to convert these as image formats(like ppm) expect values in range [0,255]. For conversion we use the formula,
+In the file color.h we make another alias for vec3 color.pix_color is the object of color.
+
+Then we extract components r,g and b. These are in the range[0.0,1.0] but we need to convert these as image formats(like ppm) expect values in range [0,255]. For conversion we use the formula,
+  
       value_in_255_range = 255.999 * value_in_0_1_range
+  
   We use 255.999 because due to floating point rounding sometimes, int(255 * 0.999999) gives 254.
 
 
