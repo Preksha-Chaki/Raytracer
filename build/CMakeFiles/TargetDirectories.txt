@@ -1,3 +1,0 @@
-/home/kiit/extra/build/CMakeFiles/main.dir
-/home/kiit/extra/build/CMakeFiles/edit_cache.dir
-/home/kiit/extra/build/CMakeFiles/rebuild_cache.dir
