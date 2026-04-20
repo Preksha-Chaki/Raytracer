@@ -80,7 +80,7 @@ Then we extract components r,g and b. These are in the range[0.0,1.0] but we nee
 
   ray class is formed in which we implement the function p(t)=a+tb which gives a point along a 3D line.
   Then we choose a image aspect ratio where it is not 1:1.
-  Additionally we set up a virtual viewport through which we pass our scene rays. It's a virtual rectangle in the 3D world that contains the grid of image puxel location.
+  Additionally we set up a virtual viewport through which we pass our scene rays. It's a virtual rectangle in the 3D world that contains the grid of image pixel location.
 
 we set viewport_width=viewport_height*(image width/image height)
 we do not set it wrt to aspect ratio as it can vary due to 2 factors-
