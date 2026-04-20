@@ -87,6 +87,7 @@ we do not set it wrt to aspect ratio as it can vary due to 2 factors-
 - image_height rounded down to nearest integer, increases ratio
 - we don't allow image_height<1
 
+<img width="398" height="222" alt="image" src="https://github.com/user-attachments/assets/0333be58-fa21-462f-b2ab-ec375df73187" />
 
   
 
