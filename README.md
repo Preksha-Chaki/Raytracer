@@ -76,7 +76,7 @@ Then we extract components r,g and b. These are in the range[0.0,1.0] but we nee
   
   We use 255.999 because due to floating point rounding sometimes, int(255 * 0.999999) gives 254.
 
-  ##3.Rays,Camera,Background
+  ## 3.Rays,Camera,Background
 
   ray class is formed in which we implement the function p(t)=a+tb which gives a point along a 3D line.
   Then we choose a image aspect ratio where it is not 1:1.
@@ -84,8 +84,8 @@ Then we extract components r,g and b. These are in the range[0.0,1.0] but we nee
 
 we set viewport_width=viewport_height*(image width/image height)
 we do not set it wrt to aspect ratio as it can vary due to 2 factors-
--image_height rounded down to nearest integer, increases ratio
--we don't allow image_height<1
+- image_height rounded down to nearest integer, increases ratio
+- we don't allow image_height<1
 
 
   
