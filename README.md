@@ -87,6 +87,27 @@ we do not set it wrt to aspect ratio as it can vary due to 2 factors-
 - image_height rounded down to nearest integer, increases ratio
 - we don't allow image_height<1
 
+For viewport prop to exactly match image proportion, use calculated image aspect ratio for final viewport width.
+
+Focal Length = where all scene rays will origin
+
+Focal length = distance between viewport and camera centre
+
+We scan the image from upper left row by row, top to bottom
+
+<img width="1001" height="650" alt="image" src="https://github.com/user-attachments/assets/eec44768-5211-49f1-9039-5923973bc689" />
+
+To get point Q we use,
+
+```
+auto viewport_upper_left=camera_centre-vec3(0,0,focal_length)-viewport_u/2-viewport_v/2 
+```
+the calculations can be represented visually as follows
+
+<img width="512" height="447" alt="image" src="https://github.com/user-attachments/assets/eb889ac7-edbe-430d-9754-aacd5e736292" />
+
+
+
 <img width="398" height="222" alt="image" src="https://github.com/user-attachments/assets/0333be58-fa21-462f-b2ab-ec375df73187" />
 
 <img width="395" height="222" alt="image" src="https://github.com/user-attachments/assets/3298f2dd-3dbf-4b55-8fd7-9b7336296c51" />
