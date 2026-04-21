@@ -76,7 +76,7 @@ Then we extract components r,g and b. These are in the range[0.0,1.0] but we nee
   
   We use 255.999 because due to floating point rounding sometimes, int(255 * 0.999999) gives 254.
 
-  ## 3.Rays,Camera,Background
+## 3.Rays,Camera,Background
 
   ray class is formed in which we implement the function p(t)=a+tb which gives a point along a 3D line.
   Then we choose a image aspect ratio where it is not 1:1.
@@ -129,9 +129,28 @@ pixel_delta_v moves 1 pixel down
 
 viewport_upper_left+0.5*(pixel_delta_u+pixel_delta_v) together moves us to the centre of the current pixel
 
+Then we use linear interpolation/linear blend to create a gradient.
+
+for 0.0<=a<=1.0,
+
+if a=1.0->blue        a=0.0-> white
+
+if in between value then it results in a blend
+
+This is refered to as a 'Lerp'
+
+we use the formula,
+```
+blendedValue=(1-a).startValue+a.endValue
+```
+
+Implementing this we get the following image
 
 
 <img width="398" height="222" alt="image" src="https://github.com/user-attachments/assets/0333be58-fa21-462f-b2ab-ec375df73187" />
+
+
+## 4.Adding a Sphere
 
 <img width="395" height="222" alt="image" src="https://github.com/user-attachments/assets/3298f2dd-3dbf-4b55-8fd7-9b7336296c51" />
 
