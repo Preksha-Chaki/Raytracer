@@ -100,11 +100,28 @@ We scan the image from upper left row by row, top to bottom
 To get point Q we use,
 
 ```
-auto viewport_upper_left=camera_centre-vec3(0,0,focal_length)-viewport_u/2-viewport_v/2 
+auto viewport_upper_left=camera_centre-vec3(0,0,focal_length)-viewport_u/2-viewport_v/2;
 ```
 the calculations can be represented visually as follows
 
 <img width="512" height="447" alt="image" src="https://github.com/user-attachments/assets/eb889ac7-edbe-430d-9754-aacd5e736292" />
+
+<img width="737" height="511" alt="image" src="https://github.com/user-attachments/assets/6c8ab826-f1b9-4f5a-9fd1-6e1c8a37a173" />
+
+here,
+viewport_u=horizontal width of viewport and,
+viewport_v=vertical height of viewport
+
+Now we are at the upper left corner of the upper left most pixel but ray tracing works best when rays go through the centre of the pixel not the edge.
+For this we use,
+
+```
+auto pixel00_loc=viewport_upper_left+0.5*(pixel_delta_u+pixel_delta_v);
+```
+Here,
+pixel_delta_u moves 1 pixel to the right
+pixel_delta_v moves 1 pixel down
+viewport_upper_left+0.5*(pixel_delta_u+pixel_delta_v) together moves us to the centre of the current pixel
 
 
 
