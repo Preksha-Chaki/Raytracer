@@ -177,6 +177,36 @@ On doing that we get,
 
 <img width="397" height="222" alt="image" src="https://github.com/user-attachments/assets/1ce86e27-5156-4e9e-9717-b1e284a254ab" />
 
+### Hittable.h
+
+The following class gives information about ray-object intersection,
+```
+class hit_record{
+public:
+    point3 p;
+    vec3 normal;
+    double t;
+}
+```
+
+p -> point of Intersection
+
+normal -> Surface normal at point p
+
+t -> distance along ray
+
+we use,
+```
+virtual bool hit(const ray& r,double ray_tmin,double ray_tmax,hit_record& rec)const=0;
+```
+This is a Pure Virtual Function, which means
+- This class can't be instantiated
+- any derived class from class hittable must implement hit
+
+## 6.Front faces vs Back faces
+
+
+
 <img width="396" height="223" alt="image" src="https://github.com/user-attachments/assets/15421734-1354-40bb-8781-7c6026316f66" />
 
   
