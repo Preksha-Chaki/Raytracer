@@ -152,8 +152,17 @@ Implementing this we get the following image
 
 ## 4.Adding a Sphere
 
+solving the equation for a circle with C as the centre and P as any point on the circle we get roots for the equation.
+
+<img width="708" height="519" alt="image" src="https://github.com/user-attachments/assets/697e7254-d077-4e76-8b93-9bae8933a940" />
+
+Applying this in code we get the following image
+
 <img width="395" height="222" alt="image" src="https://github.com/user-attachments/assets/3298f2dd-3dbf-4b55-8fd7-9b7336296c51" />
 
+## 5.Surface Normals 
+
+Noraml vectors are used for shading. They are perpendicular to the surface at the point of intersection. All normal vectors are of unit length.Implementing surface normals we get,
 
 <img width="378" height="209" alt="image" src="https://github.com/user-attachments/assets/c7bb1c4d-c3bb-47db-96c9-18a727101363" />
 
