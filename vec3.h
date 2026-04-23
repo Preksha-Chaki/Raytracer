@@ -1,8 +1,8 @@
 #ifndef VEC3_H //handles multiple imports
 #define VEC3_H
+#include"rtweekend.h"
+//<>-global header file,""-local header file
 
-#include<cmath>//<>-global header file,""-local header file
-#include<iostream>
 
 class vec3{
 
