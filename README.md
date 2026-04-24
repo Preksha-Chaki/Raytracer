@@ -205,7 +205,30 @@ This is a Pure Virtual Function, which means
 
 ## 6.Front faces vs Back faces
 
+### Case 1: Normal always points outwards
 
+This is what we are currently using.
+
+Normal = from centre to surface, always points outside sphere
+
+Ray hits from outside
+- Normal points outwards
+- Ray comes from outside
+
+This causes ray to to be perpendicular to ray direction,i.e.,points opposite to to ray.
+
+Ray hits from inside
+- Ray starts from inside sphere
+- normal still still points outwards when it should point in opposite direction
+
+### Case 2:Normals always oppose rays
+
+Instead of always outwards, Normal always against ray direction. Now we use this case instead of case 1 for our raytracer.
+
+For this, dot(ray_direction,outward_vector)
+
+-ve -> ray and normal opposite, keep both same
++ve -> ray and normal in same direction, flip normal
 
 <img width="396" height="223" alt="image" src="https://github.com/user-attachments/assets/15421734-1354-40bb-8781-7c6026316f66" />
 
