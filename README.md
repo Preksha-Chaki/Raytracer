@@ -228,6 +228,7 @@ Instead of always outwards, Normal always against ray direction. Now we use this
 For this, dot(ray_direction,outward_vector)
 
 -ve -> ray and normal opposite, keep both same
+
 +ve -> ray and normal in same direction, flip normal
 
 <img width="396" height="223" alt="image" src="https://github.com/user-attachments/assets/15421734-1354-40bb-8781-7c6026316f66" />
