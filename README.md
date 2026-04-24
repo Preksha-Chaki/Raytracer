@@ -231,6 +231,12 @@ For this, dot(ray_direction,outward_vector)
 
 +ve -> ray and normal in same direction, flip normal
 
+Hittable.h -> class that stores a list of hittables
+
+rtweekend.h -> common header file
+
+Implementing these header files and making a hittable ground we get,
+
 <img width="396" height="223" alt="image" src="https://github.com/user-attachments/assets/15421734-1354-40bb-8781-7c6026316f66" />
 
   
