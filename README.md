@@ -240,7 +240,8 @@ Implementing these header files and making a hittable ground we get,
 <img width="396" height="223" alt="image" src="https://github.com/user-attachments/assets/15421734-1354-40bb-8781-7c6026316f66" />
 
   
-##7.Antialiasing
+## 7.Antialiasing
+
 
 Aliasing -> harsh “stair step” nature of edges in rendered images
 
