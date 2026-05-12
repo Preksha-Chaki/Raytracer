@@ -247,6 +247,22 @@ Aliasing -> harsh “stair step” nature of edges in rendered images
 
 To solve this we sample the square region centered at the pixel that extends halfway to each of the four neighboring pixels
 
+Then we update write_color function in color.h to account for number of samples we use,i.e, find avg across all samples we take.
+
+To ensure that the color components of the final result remain within the proper [0,1] bounds we add clamp function to interval.h.
+
+Update in camera.h we update get_ray(i,j) function to generate different samples for each pixel.
+
+Main is updated to include samples_per_pixel parameter.
+
+Implementing these we get the following image,
+
+<img width="392" height="221" alt="image" src="https://github.com/user-attachments/assets/6d5848bb-f287-4146-ad1a-01f39d9782f8" />
+
+
+
+
+
 
 
 
