@@ -259,6 +259,7 @@ Implementing these we get the following image,
 
 <img width="392" height="221" alt="image" src="https://github.com/user-attachments/assets/6d5848bb-f287-4146-ad1a-01f39d9782f8" />
 
+As we can see in this image the sphere has smoother edges compared to previous images.
 
 
 
