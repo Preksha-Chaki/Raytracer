@@ -267,7 +267,7 @@ These materials don't emit their own light but only take on color of their surro
 
 The ray also may be absorbed, the darker the surface the more chance ray is absorbed.
 
-# Case1: a surface that randomly bounces a ray equally in all directions
+### Case1: a surface that randomly bounces a ray equally in all directions
 
 Here a ray that hits the surface has equal probablity of bouncing off in any direction. For this we add random utility function to vec3.h.
 
@@ -290,6 +290,13 @@ If ray bounces off and keeps 100% of it's colour-> white, 0% -> black
 We set ray_color to return rays with 50% of their color resulting in a grey sphere
 
 <img width="398" height="225" alt="image" src="https://github.com/user-attachments/assets/edc02f18-fd0c-4add-a379-1e54475611fa" />
+
+ with 90%
+ <img width="397" height="222" alt="image" src="https://github.com/user-attachments/assets/692b0202-9e05-44f0-ab71-0b6b6ed28660" />
+
+ with 20%
+<img width="393" height="223" alt="image" src="https://github.com/user-attachments/assets/a6502fbb-87b1-469e-8ec2-45620fbd9f57" />
+
 
 
 
