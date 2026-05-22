@@ -9,7 +9,7 @@ public:
 double aspect_ratio=1.0;
 int image_width=100;
 int samples_per_pixel=10; //no of random samples for each pixel
-
+int max_depth=10;
 void render(const hittable& world)
 {
 	initialize();
@@ -24,7 +24,7 @@ void render(const hittable& world)
 		{
                 ray r =get_ray(i,j);
 
-                pixel_color+= ray_color(r, world);
+                pixel_color+= ray_color(r,max_depth,world);
 		}
 		pixel_color *= pixel_samples_scale;
 
@@ -93,12 +93,17 @@ ray get_ray(int i, int j) const {
 
 
 
-color ray_color(const ray& r,const hittable& world){
+color ray_color(const ray& r,int depth,const hittable& world)const{
+	//if we exceede ray bounce limit, no more light is gathered
+        if(depth<=0)
+	{
+		return color(0,0,0);
+	}
 
-        hit_record rec;
-        if(world.hit(r,interval(0,infinity),rec)){
+	hit_record rec;
+        if(world.hit(r,interval(0.001,infinity),rec)){//ignoring hits very close to calc intersection point
 		vec3 direction = random_on_hemisphere(rec.normal);
-                return 0.5*ray_color(ray(rec.p,direction),world);
+                return 0.5*ray_color(ray(rec.p,direction),depth-1,world);
         }
         vec3 unit_direction=unit_vector(r.direction());//vector of magnitude 1
         auto a=0.5*(unit_direction.y()+1.0);
