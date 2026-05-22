@@ -292,9 +292,11 @@ We set ray_color to return rays with 50% of their color resulting in a grey sphe
 <img width="398" height="225" alt="image" src="https://github.com/user-attachments/assets/edc02f18-fd0c-4add-a379-1e54475611fa" />
 
  with 90%
+ 
  <img width="397" height="222" alt="image" src="https://github.com/user-attachments/assets/692b0202-9e05-44f0-ab71-0b6b6ed28660" />
 
  with 20%
+ 
 <img width="393" height="223" alt="image" src="https://github.com/user-attachments/assets/a6502fbb-87b1-469e-8ec2-45620fbd9f57" />
 
 
