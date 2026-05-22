@@ -267,7 +267,7 @@ These materials don't emit their own light but only take on color of their surro
 
 The ray also may be absorbed, the darker the surface the more chance ray is absorbed.
 
-### Case1: a surface that randomly bounces a ray equally in all directions
+### a surface that randomly bounces a ray equally in all directions
 
 Here a ray that hits the surface has equal probablity of bouncing off in any direction. For this we add random utility function to vec3.h.
 
@@ -299,6 +299,13 @@ We set ray_color to return rays with 50% of their color resulting in a grey sphe
  
 <img width="393" height="223" alt="image" src="https://github.com/user-attachments/assets/a6502fbb-87b1-469e-8ec2-45620fbd9f57" />
 
+ray_color function is recursive, it stops when it fails to hit anything. In some cases this may blow the stack so we need to limit the maximum recursion depth.
+
+### fixing shadow acne
+
+A ray will try to accurately calculate the intersection point when it intersects with a surface. But floating point rounding errors can occur which can cause the intersection point to be slightly off. The origin of the next ray, the ray that is randomly scattered off of the surface, might just be above or below the surface. If the rays origin is just below the surface, it can intersect with the surface again. To solve this we just ignore the hits that are very close to the intersection point.
+
+<img width="400" height="225" alt="image" src="https://github.com/user-attachments/assets/a92e46e2-26f7-49f3-859b-c9a3dc2285df" />
 
 
 
