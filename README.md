@@ -261,12 +261,35 @@ Implementing these we get the following image,
 
 As we can see in this image the sphere has smoother edges compared to previous images.
 
+## 8.Difffuse/Matte Materials
 
+These materials don't emit their own light but only take on color of their surrounds and modulate that with their own colour. 
 
+The ray also may be absorbed, the darker the surface the more chance ray is absorbed.
 
+# Case1: a surface that randomly bounces a ray equally in all directions
 
+Here a ray that hits the surface has equal probablity of bouncing off in any direction. For this we add random utility function to vec3.h.
 
+We need to get results of random vectors such thaey are on surface of hemisphere.
 
+For this we use, a rejection method.
+
+- Generate a random vector inside the unit sphere
+- Normalize this vector to extend it to the sphere surface
+- Invert the normalized vector if it falls onto the wrong hemisphere
+
+First we pick a random point in the cube enclosing the unit sphere(radius 1). If this point lies outside the unit sphere, then generate a new one until we find one that lies inside or on the unit sphere.
+
+Since floating-point numbers have finite precision, a very small value can underflow to zero when squared. We'll reject points that lie inside this “black hole” around the center.
+
+Now we need to determine if our random vector is on the correct hemisphere by compairing it against surface normal. If dot product is positive then it is in correct hemisphere, if negative then we need to invert the vector.
+
+If ray bounces off and keeps 100% of it's colour-> white, 0% -> black
+
+We set ray_color to return rays with 50% of their color resulting in a grey sphere
+
+<img width="398" height="225" alt="image" src="https://github.com/user-attachments/assets/edc02f18-fd0c-4add-a379-1e54475611fa" />
 
 
 
