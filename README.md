@@ -307,6 +307,43 @@ A ray will try to accurately calculate the intersection point when it intersects
 
 <img width="400" height="225" alt="image" src="https://github.com/user-attachments/assets/a92e46e2-26f7-49f3-859b-c9a3dc2285df" />
 
+### True Lambertian Reflection
+
+Lambertian reflection scatters rays proportional to cos(ϕ)
+
+ϕ-> angle between reflected ray and surface normal
+
+Reflected ray is most likely to scatter in a direction near the surface normal, and less likely to scatter in directions away from the normal.
+ 
+We can create this distribution by adding a random unit vector to the normal vector.
+
+We want the reflected ray to bounce in a random outward direction.
+- imagine a unit sphere centered at P+n (just outside the surface).
+- Pick a random point S on that sphere.
+- The new ray direction is: S−P
+
+Since:
+
+S=P+n+r
+
+(where r is a random unit vector),
+
+the direction becomes:
+
+(S−P)=n+r
+
+<img width="543" height="425" alt="Untitled" src="https://github.com/user-attachments/assets/c9247cb7-e5ea-4fd5-9aa6-ea3c937b9846" />
+
+
+### Gamma Correction for accurate color intensity
+
+Right now our images are too dark. This is because almost all image viewers assume image is already gamma corrected, i.e., the 0 to 1 values have some transform applied before being stored as a byte. Images with data that are written without being transformed are said to be in linear space, whereas images that are transformed are said to be in gamma space.
+
+Appling gamma transform for gamma 2 we get a much brighter image at 50%
+
+<img width="396" height="224" alt="image" src="https://github.com/user-attachments/assets/b7b451e6-ef4c-4a13-875d-17d3f7f2db42" />
+
+## 9.Metal
 
 
 
