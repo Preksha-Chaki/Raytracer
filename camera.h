@@ -102,7 +102,7 @@ color ray_color(const ray& r,int depth,const hittable& world)const{
 
 	hit_record rec;
         if(world.hit(r,interval(0.001,infinity),rec)){//ignoring hits very close to calc intersection point
-		vec3 direction = random_on_hemisphere(rec.normal);
+		vec3 direction = rec.normal + random_unit_vector();//adding random vector to normal
                 return 0.5*ray_color(ray(rec.p,direction),depth-1,world);
         }
         vec3 unit_direction=unit_vector(r.direction());//vector of magnitude 1
